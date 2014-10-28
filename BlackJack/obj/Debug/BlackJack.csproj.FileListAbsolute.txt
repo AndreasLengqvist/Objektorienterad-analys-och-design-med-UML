@@ -1,0 +1,4 @@
+C:\Users\al223bn\Documents\GitHub\Workshop-3\BlackJack\obj\Debug\BlackJack.pdb
+C:\Users\al223bn\Documents\GitHub\Workshop-3\BlackJack\bin\Debug\BlackJack.exe
+C:\Users\al223bn\Documents\GitHub\Workshop-3\BlackJack\bin\Debug\BlackJack.pdb
+C:\Users\al223bn\Documents\GitHub\Workshop-3\BlackJack\obj\Debug\BlackJack.exe
