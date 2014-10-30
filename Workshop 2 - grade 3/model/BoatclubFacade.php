@@ -21,7 +21,6 @@ class BoatclubFacade{
 
 
 
-
 	public function getMembers(){
 		return $this->memberRepository->getMembers();
 	}
@@ -41,6 +40,9 @@ class BoatclubFacade{
 		$this->memberRepository->addMember($member);
 	}
 
+	public function addBoat($boat){
+		$this->boatRepository->addBoat($boat);
+	}
 
 	public function updateMember($member){
 		$this->memberRepository->updateMember($member);
@@ -52,7 +54,14 @@ class BoatclubFacade{
 	}
 
 
+	public function updateBoat($boat){
+		$this->boatRepository->updateBoat($boat);
+	}
 
+
+	public function deleteBoat($boat){
+		$this->boatRepository->deleteBoat($boat);
+	}
 
 
 	public function sessionIsset(){

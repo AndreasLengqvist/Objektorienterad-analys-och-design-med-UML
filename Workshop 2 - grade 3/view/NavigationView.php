@@ -36,4 +36,7 @@ class NavigationView{
 		header('Location:  /' . \Config::$ROOT_PATH . '/?' . self::$action.'='.self::$actionShowMember);
 	}
 
+	public static function RedirectToCreateBoat() {
+		header('Location:  /' . \Config::$ROOT_PATH . '/?' . self::$action.'='.self::$actionCreateBoat);
+	}
 }

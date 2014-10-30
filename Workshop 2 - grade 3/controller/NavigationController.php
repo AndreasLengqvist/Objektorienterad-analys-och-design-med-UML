@@ -7,7 +7,8 @@ require_once('controller/MemberController.php');
 require_once('controller/ListController.php');
 require_once('view/NavigationView.php');
 
-
+// http://yuml.me/50cb5134
+// http://yuml.me/diagram/scruffy;dir:TB/class/
 
 class NavigationController{
 
@@ -44,23 +45,12 @@ class NavigationController{
 					$controller = new MemberController();
 					return $controller->createMember();
 				break;
-
-				// Ändra medlem.
-				case \view\NavigationView::$actionEditMember:
-					$controller = new MemberController();
-					return $controller->editMember();
-				break;
+				
 
 				// Skapa båt.
 				case \view\NavigationView::$actionCreateBoat:
-					$controller = new BoatControllr();
+					$controller = new MemberController();
 					return $controller->createBoat();
-				break;
-
-				// Editera båt.
-				case \view\NavigationView::$actionEditBoat:
-					$controller = new BoatController();
-					return $controller->editBoat();
 				break;
 
 

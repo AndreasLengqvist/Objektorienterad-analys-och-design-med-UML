@@ -15,7 +15,6 @@ class Boat{
 
 	// Sätter medlemmens uppgifter och slumpar fram ett unikt medlemsid för denne.
 	public function __construct($memberId, $boatId = NULL, $boattype, $length){
-
 		$this->memberId = $memberId;
 		$this->boatId = ($boatId == NULL) ? sha1(uniqid($this->memberId, true)) : $boatId;
 		$this->length = $length;

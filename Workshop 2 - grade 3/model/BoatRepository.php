@@ -21,13 +21,13 @@ class BoatRepository extends Repository{
 		$this->dbTable = "boat";	
 	}
 
-/*
+
 	public function addBoat(Boat $boat){
 
 		try{
 			$db = $this->connection();
 
-        	$sql = "INSERT INTO $this->dbTable (" . self::memberId . ", " . self::boatId . ", " . self::boattype . ", " . self::length . ") VALUES (?, ?, ?, ?)";
+        	$sql = "INSERT INTO $this->dbTable (" . self::$memberId . ", " . self::$boatId . ", " . self::$boattype . ", " . self::$length . ") VALUES (?, ?, ?, ?)";
 
 			$params = array($boat->getMemberId(), $boat->getBoatId(), $boat->getBoattype(), $boat->getLength());
 
@@ -48,7 +48,7 @@ class BoatRepository extends Repository{
 			$db = $this -> connection();
 
 			$sql = "DELETE FROM $this->dbTable
-					WHERE " . self::boatId . " = ?";
+					WHERE " . self::$boatId . " = ?";
 			$params = array($id);
 
 			$query = $db -> prepare($sql);
@@ -59,7 +59,7 @@ class BoatRepository extends Repository{
 			die("An error occured in the database!");
 		}
 	}
-*/
+
 
 	public function getBoatsByMemberId($id){
 		
@@ -87,19 +87,17 @@ class BoatRepository extends Repository{
 			die('Error while connection to database.');
 		}
 	}
-/*
 
-
-		public function updateQuestion(Question $question) {
-			$this->dbTable = "question";
+		public function updateBoat(Boat $boat) {
+			$this->dbTable = "boat";
 					
 
 			try{
 				$db = $this -> connection();
 
-				$sql = "UPDATE $this->dbTable SET " . self::$quizId . "=?, " . self::$question . "=?, " . self::$answer . "=? WHERE " . self::$questionId ."=?";
+				$sql = "UPDATE $this->dbTable SET " . self::$memberId . "=?, " . self::$boattype . "=?, " . self::$length . "=? WHERE " . self::$boatId ."=?";
 
-				$params = array($question->getQuizId(), $question->getQuestion(), $question->getAnswer(), $question->getQuestionId());
+				$params = array($boat->getMemberId(), $boat->getBoattype(), $boat->getLength(), $boat->getBoatId());
 
 				$query = $db -> prepare($sql);
 				$query -> execute($params);
@@ -109,5 +107,4 @@ class BoatRepository extends Repository{
 				die("An error occured in the database!");
 			}
 		}
-		*/
 }
