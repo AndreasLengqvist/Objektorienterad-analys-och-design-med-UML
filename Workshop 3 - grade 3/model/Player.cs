@@ -11,6 +11,7 @@ namespace BlackJack.model
         private List<IObserver<Card>> observerList;
 
         
+        
         public void DealCard(Card a_card)
         {
             m_hand.Add(a_card);
@@ -22,10 +23,12 @@ namespace BlackJack.model
 
         }
 
+
         public Player()
         {
             observerList = new List<IObserver<Card>>();
         }
+
 
         public IDisposable Subscribe(IObserver<Card> observer)
         {
@@ -41,15 +44,18 @@ namespace BlackJack.model
             return new Unsubscriber<Card>(observerList, observer);
         }
 
+
         public IEnumerable<Card> GetHand()
         {
             return m_hand.Cast<Card>();
         }
 
+
         public void ClearHand()
         {
             m_hand.Clear();
         }
+
 
         public void ShowHand()
         {
@@ -60,10 +66,11 @@ namespace BlackJack.model
         }
 
 
+        // Räknar ut resultatet av händer.
         public int CalcScore()
         {
-            int[] cardScores = new int[(int)model.Card.Value.Count]
-                {2, 3, 4, 5, 6, 7, 8, 9, 10, 10 ,10 ,10, 11};
+            // Används för att visa på det dolda beroendet på valörerna.
+            int[] cardScores = new int[(int)model.Card.Value.Count] {2, 3, 4, 5, 6, 7, 8, 9, 10, 10 ,10 ,10, 11};
             int score = 0;
 
             foreach(Card c in GetHand()) {
@@ -88,8 +95,10 @@ namespace BlackJack.model
         }
 
 
+        // Räknar ut resultatet av händer med soft 17-implementationen.
         public int SoftCalcScore()
         {
+            // Används för att visa på det dolda beroendet på valörerna.
             int[] cardScores = new int[(int)model.Card.Value.Count] { 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11 };
             int score = 0;
 

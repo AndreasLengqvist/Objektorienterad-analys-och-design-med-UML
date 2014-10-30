@@ -5,6 +5,8 @@ using System.Text;
 
 namespace BlackJack.model
 {
+
+    // Facade som om är knytpunkten mellan controller/vy och resterande modeller.
     class Game
     {
         private model.Dealer m_dealer;

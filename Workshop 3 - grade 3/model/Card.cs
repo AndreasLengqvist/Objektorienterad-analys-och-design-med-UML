@@ -7,6 +7,7 @@ namespace BlackJack.model
 {
     class Card
     {
+
         public enum Color
         {
             Hearts = 0,
@@ -36,9 +37,11 @@ namespace BlackJack.model
             Hidden
         }
 
+
         private Color m_color;
         private Value m_value;
         private bool m_isHidden;
+
 
         public Card(Color a_color, Value a_value)
         {
@@ -46,6 +49,7 @@ namespace BlackJack.model
             m_color = a_color;
             m_isHidden = true;
         }
+
 
         public Color GetColor()
         {
@@ -55,6 +59,7 @@ namespace BlackJack.model
             }
             return m_color;
         }
+
 
         public Value GetValue()
         {

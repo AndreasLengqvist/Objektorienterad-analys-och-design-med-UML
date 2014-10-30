@@ -7,8 +7,11 @@ namespace BlackJack.model
 {
     class Deck
     {
-        List<Card> m_cards;
 
+        List<Card> m_cards;     // En lista av kort (alltså kortleken).
+
+
+        // Lägger till alla kort i kortleken för varje färg och för varje valör. Blandar.
         public Deck()
         {
             m_cards = new List<Card>();
@@ -25,6 +28,8 @@ namespace BlackJack.model
             Shuffle();
         }
 
+
+
         public Card GetCard()
         {
             Card c = m_cards.First();
@@ -32,16 +37,22 @@ namespace BlackJack.model
             return c;
         }
 
+
+        // Lägger till ett kort till kortleken. Anropas i Deck().
         public void AddCard(Card a_c)
         {
             m_cards.Add(a_c);
         }
 
+
+        // Kapslar in kortleken medhjälp av IEnumerables Cast-funktion? Innan den returneras.
         public IEnumerable<Card> GetCards()
         {
             return m_cards.Cast<Card>();
         }
 
+
+        // Blandar korten i en slumpmässig ordning. 1017 är bara ett slumptal.
         private void Shuffle()
         {
             Random rnd = new Random();

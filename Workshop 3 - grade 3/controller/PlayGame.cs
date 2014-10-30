@@ -9,11 +9,12 @@ namespace BlackJack.controller
     class PlayGame : IObserver<model.Card>
     {
 
-        private model.Game a_game;
-        private view.IView a_view;
+
+        private model.Game a_game;      // Instans av ett Game-objekt.
+        private view.IView a_view;      // Instans av ett IView-objekt (interface till vyerna SimleView/SwedishView).
 
 
-
+        // Konstruktor som sätter IN-parametrarna till sina privata medlemsvariabler.
         public PlayGame(model.Game game, view.IView view)
         {
             a_game = game;
@@ -21,12 +22,15 @@ namespace BlackJack.controller
         }
 
 
+        // Spelfunktion. Returnerar false om spelaren tryckt Quit.
+        // Annars någon av IF-satserna.
         public bool Play()
         {
 
 
             a_game.GetPlayer().Subscribe(this);
             a_game.GetDealer().Subscribe(this);
+
 
             RenderOut();
 
@@ -42,11 +46,13 @@ namespace BlackJack.controller
             {
                 a_game.NewGame();
             }
-            if (a_view.ActionStand(input))
+            
+            else if (a_view.ActionStand(input))
             {
                 a_game.Stand();
             }
-            if (a_view.ActionHit(input))
+
+            else if (a_view.ActionHit(input))
             {
                 a_game.Hit();
             }
@@ -54,16 +60,19 @@ namespace BlackJack.controller
             return a_view.ActionQuit(input) == false;
         }
 
+
+        // Hold-funktion som pausar spelet ett tag innan nästa kort delas ut.
         public void OnNext(model.Card card)
         {
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
             RenderOut();
         }
 
+
+        // Renderar ut välkommstmeddelande och spelarnas händer och score.
         public void RenderOut()
         {
             a_view.DisplayWelcomeMessage();
-
             a_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
             a_view.DisplayPlayerHand(a_game.GetPlayerHand(), a_game.GetPlayerScore());
         }

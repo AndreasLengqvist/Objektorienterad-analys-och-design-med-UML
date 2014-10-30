@@ -5,6 +5,7 @@ using System.Text;
 
 namespace BlackJack.model
 {
+    // Dealer ärver från Player.
     class Dealer : Player
     {
         private Deck m_deck = null;
@@ -12,16 +13,17 @@ namespace BlackJack.model
 
         private rules.INewGameStrategy m_newGameRule;
         private rules.IHitStrategy m_hitRule;
-        private rules.IWinStrategy m_newRule;
+        private rules.IWinStrategy m_winRule;
 
 
+        // Hämtar in spelet olika regler.
         public Dealer(rules.RulesFactory a_rulesFactory)
         {
             m_newGameRule = a_rulesFactory.GetNewGameRule();
             m_hitRule = a_rulesFactory.GetHitRule();
-            m_newRule = a_rulesFactory.GetNewRule();
-
+            m_winRule = a_rulesFactory.GetNewRule();
         }
+
 
         public bool NewGame(Player a_player)
         {
@@ -77,15 +79,18 @@ namespace BlackJack.model
             return false;
         }
 
+
         public int GetMaxScore()
         {
             return g_maxScore;
         }
 
+
         public bool IsDealerWinner(Player a_player)
         {
-            return m_newRule.IsDealerWinner(a_player, this);
+            return m_winRule.IsDealerWinner(a_player, this);
         }
+
 
         public bool IsGameOver()
         {
