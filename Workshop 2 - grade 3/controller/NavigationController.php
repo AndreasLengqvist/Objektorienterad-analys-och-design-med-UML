@@ -8,7 +8,6 @@ require_once('controller/ListController.php');
 require_once('view/NavigationView.php');
 
 // http://yuml.me/50cb5134
-// http://yuml.me/diagram/scruffy;dir:TB/class/
 
 class NavigationController{
 
