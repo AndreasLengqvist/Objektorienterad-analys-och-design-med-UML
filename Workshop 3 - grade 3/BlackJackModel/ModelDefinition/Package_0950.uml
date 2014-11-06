@@ -30,7 +30,7 @@
         isActiveClass="false">
         <suppliersInternal>
           <interfaceRealization
-            Id="ff7d3f8d-a246-4bb1-8c24-a998959af77a">
+            Id="54d92792-65c0-4110-bf4a-7a746c6a5ba0">
             <interfaceMoniker
               Id="daa2b7a8-1024-4de0-8428-0008d3ffa08b"
               LastKnownName="IView"
@@ -48,7 +48,7 @@
         isActiveClass="false">
         <suppliersInternal>
           <interfaceRealization
-            Id="1df8f863-00dd-4dd2-b01c-2e5b09eed6f1">
+            Id="d6b25fa9-0cb9-4b87-a342-fedc8e7da452">
             <interfaceMoniker
               Id="daa2b7a8-1024-4de0-8428-0008d3ffa08b"
               LastKnownName="IView"

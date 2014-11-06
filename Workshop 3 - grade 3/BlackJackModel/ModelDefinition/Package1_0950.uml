@@ -309,6 +309,22 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="8126fb3c-8e42-4afd-8c1d-d913a15c9c0f">
+            <interfaceMoniker
+              Id="ee894939-2756-479e-9842-81c36f257a46"
+              LastKnownName="IObservable"
+              LastKnownLocation="Package_1522.uml" />
+          </interfaceRealization>
+          <dependency
+            Id="f0dfdd02-e969-4933-9d04-9bfc9922d21a">
+            <interfaceMoniker
+              Id="d25de25a-176b-49bb-8358-25a28e2ac815"
+              LastKnownName="IObserver"
+              LastKnownLocation="Package_1522.uml" />
+          </dependency>
+        </suppliersInternal>
         <targetEnds>
           <association
             Id="4e104d3a-3dd0-4e57-b8cb-0ec9d65fa0ab"
@@ -373,6 +389,44 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="9eb69fb3-34aa-4339-a15f-b44433475379"
+            name="Subscribe"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ed8b5296-292d-4ab1-8623-73753401ca08"
+                  name="observer"
+                  direction="In">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="d78b3558-e1e9-49d7-b562-0afe364a19b0"
+                      LastKnownName="IObserver&lt;T‎&gt;"
+                      LastKnownLocation="Package_1522.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7f61831a-f833-4cb5-9ce9-5e14f8791fe0"
+                  direction="Return">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="a3ef219a-f021-46f9-8fbf-00c40bf821a1"
+                      LastKnownName="IDisposable"
+                      LastKnownLocation="Package1_1522.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
