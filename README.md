@@ -1,9 +1,12 @@
 # Objektorienterad analys och design med UML - HT2014
 
 
-Kursen behandlade de moment i mjukvaruutveckling som avser att öka förståelsen för ett problemområde och kommunicera mer eller mindre detaljerade ritningar över ett system med hjälp av UML (Unified Modeling Language). <br>
-Efter kursen har jag fått ny kunskap i hur man kan ta fram en en domänmodell för att öka och kommunicera förståelsen för ett problemområde, hur man kan modellera hela eller delar av ett mjukvarusystem från olika perspektiv.<br> Jag har även fått kunskap i hur en objektorienterad modell kan översättas till ett objektorienterat programmeringsspråk och vice versa. <br>
-Jag fick även mycket bättre förståelse för designmönster och refactoring (omstrukturering) som designmetoder.
+The course gives basic knowledge in object­oriented analysis and design, the basics of the modeling language UML and the implementation of analysis and design models using an object­oriented programming language:
+- Understand the concepts and principles of object­oriented analysis and design
+- Be able to develop object­oriented models in UML for different problems
+- Be able to transform object­oriented models into an object­oriented programming language and vice versa
+- Have basic knowledge of the use of design patterns
+- Have basic knowledge of refactoring as a design method.
 
 Programmeringsspråk: <b>C#</b><br>
 Betygsskala: <b>3/4/5</b><br>
